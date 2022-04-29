@@ -260,8 +260,8 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Roles',
+            'route'  => 'roles.index',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
