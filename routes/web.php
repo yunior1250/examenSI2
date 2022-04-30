@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\espController;
 use App\Http\Controllers\medController;
+use App\Http\Controllers\pacienteController;
 use App\Http\Controllers\roleController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
@@ -31,4 +32,6 @@ Route::resource('users', userController::class)->names('users');
 
 Route::resource('esps', espController::class)->names('esps');
 Route::resource('medicos', medController::class)->names('medicos');
+
+Route::resource('pacientes', pacienteController::class)->names('pacientes');
 

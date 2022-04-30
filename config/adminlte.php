@@ -276,6 +276,11 @@ return [
             'icon' => 'fas fa-solid fa-syringe',
         ],
         [
+            'text' => 'Pacientes',
+            'route'  => 'pacientes.index',
+            'icon' => 'fas fa-solid fa-syringe',
+        ],
+        [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
