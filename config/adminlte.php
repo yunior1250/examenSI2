@@ -254,15 +254,26 @@ return [
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
+
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Usuarios',
+            'route'  => 'users.index',
+            'icon' => 'fas fa-hospital-user',
         ],
         [
             'text' => 'Roles',
             'route'  => 'roles.index',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-users-cog',
+        ],
+        [
+            'text' => 'Medicos',
+            'route'  => 'medicos.index',
+            'icon' => 'fas fa-user-md',
+        ],
+        [
+            'text' => 'Especialidades',
+            'route'  => 'esps.index',
+            'icon' => 'fas fa-solid fa-syringe',
         ],
         [
             'text'    => 'multilevel',

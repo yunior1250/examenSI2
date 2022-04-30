@@ -112,6 +112,6 @@ class roleController extends Controller
     public function destroy(Role $role)
     {
         Role::destroy($role->id);
-        return redirect('roles');
+        return redirect('roles.index');
     }
 }
