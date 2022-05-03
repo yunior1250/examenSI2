@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'usermenu_enabled' => true,
+    'usermenu_enabled' => false,
     'usermenu_header' => false,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
@@ -127,10 +127,10 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'navbar-navy elevation-4',
-    'classes_sidebar_nav' => 'navy-navy',
-    'classes_topnav' => 'accent-pink navbar-navy',
-    'classes_topnav_nav' => 'navy-expand',
+    'classes_sidebar' => 'sidebar-dark-info',
+    'classes_sidebar_nav' => 'nav-child-indent',
+    'classes_topnav' => 'navbar-info',
+    'classes_topnav_nav' => 'navbar-expand-md',
     'classes_topnav_container' => 'container',
 
     /*
@@ -145,7 +145,7 @@ return [
     |
     */
 
-    'sidebar_mini' => 'lg',
+    'sidebar_mini' => 'md',
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
@@ -170,8 +170,8 @@ return [
     'right_sidebar' => false,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
-    'right_sidebar_slide' => true,
-    'right_sidebar_push' => true,
+    'right_sidebar_slide' => false,
+    'right_sidebar_push' => false,
     'right_sidebar_scrollbar_theme' => 'os-theme-light',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
@@ -229,18 +229,18 @@ return [
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
         [
             'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
 
         // Sidebar items:
-        [
+       /* [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],
+        ],*/
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
@@ -267,14 +267,30 @@ return [
         [
             'text' => 'Especialidades',
             'route'  => 'esps.index',
-            'icon' => 'fas fa-solid fa-syringe',
+            'icon' => 'fas fa-bacteria',
         ],
         [
             'text' => 'Pacientes',
             'route'  => 'pacientes.index',
+            'icon' => 'fas fa-user-group',
+        ],
+        [
+            'text' => 'Consultas',
+            'route'  => 'consulta.index',
             'icon' => 'fas fa-solid fa-syringe',
         ],
         [
+            'text' => 'Historico Medico',
+            'route'  => 'historias.index',
+            'icon' => 'fas fa-clipboard-user',
+        ],
+        [
+            'text' => 'Bitacora',
+            'route'  => 'bitacora.index',
+            'icon' => 'fas fa-clipboard-user',
+        ],
+
+       /* [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -311,10 +327,9 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],
+        ],*/
 
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Menu Filters

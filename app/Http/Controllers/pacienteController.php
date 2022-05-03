@@ -49,7 +49,7 @@ class pacienteController extends Controller
         $user->name = $paciente->nombre;
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        $user->id_p = $paciente->id;
+        $user->cod_p = $paciente->id;
         $user->assignRole('Paciente');
         $user->save();
 
@@ -96,8 +96,8 @@ class pacienteController extends Controller
         $paciente->direccion = $request->input('direccion');
         $paciente->save();
 
-        $user = User::where('id_p',$paciente->id)->first();
-        $user->name = $paciente->nombre;
+        $user = User::where('cod_p',$paciente->id)->first();
+        $user->name= $paciente->nombre;
         $user->save();
 
         return redirect()->route('pacientes.index');
@@ -112,6 +112,12 @@ class pacienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $paciente = Paciente::findOrFail($id);
+        $paciente->delete();
+
+        $user = User::where('cod_p', $paciente->id);
+        $user->delete();
+
+        return redirect()->route('pacientes.index');
     }
 }

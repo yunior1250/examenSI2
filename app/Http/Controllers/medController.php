@@ -54,9 +54,11 @@ class medController extends Controller
         $usuario->name =$medic->nombre;
         $usuario->email =$request->input('email') ;
         $usuario->password = bcrypt($request->input('password') );
-        $usuario->id_p = $medic->id;
+        $usuario->cod_m = $medic->id;
         $usuario->assignRole('Medico');
         $usuario->save();
+
+
 
         return redirect()->route('medicos.index');
 
@@ -81,9 +83,11 @@ class medController extends Controller
      */
     public function edit($id)
     {
-        $medc=medico::findOrFail($id);
+        $medc=medico::find($id);
         $esps=Especialidad::all();
-        $user=User::where ('id_p',$medc->id)->first();
+        $user=User::where('cod_m',$medc->id)->first();
+        
+
         return view('medicos.edit',compact('medc','esps','user'));
     }
 
@@ -108,7 +112,7 @@ class medController extends Controller
         $medic->id_especialidad= $request->especialidad;
         $medic->save();
 
-        $user=User::where ('id_p',$medic->id)->first();
+        $user=User::where ('cod_m',$medic->id)->first();
         $user->name = $medic->nombre;
         $user->email = $request->input('email');
 
@@ -127,7 +131,8 @@ class medController extends Controller
         $medic= Medico::findOrFail($id);
 
 
-        $user = User::where('id_p', $medic->id);
+
+        $user = User::where('cod_m', $medic->id);
         $user->delete();
 
         $medic->delete();
